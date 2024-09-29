@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony Haug - Personal Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --container-bg: rgba(26, 26, 26, 0.8);
+            --text-color: #ffffff;
+            --neon-yellow: #ccff00;
+            --neon-pink: #ff1493;
+        }
+        body, html {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: var(--container-bg);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px var(--neon-yellow), 0 0 40px var(--neon-pink);
+            text-align: center;
+            width: 90%;
+            max-width: 700px;
+        }
+        h1 {
+            color: var(--neon-yellow);
+            font-size: 4.7em;
+            font-weight: 700;
+            margin: 0 0 0.5rem;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+            line-height: 1.1;
+        }
+        h1:hover {
+            color: var(--neon-pink);
+        }
+        p {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1.2em;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .social-links a {
+            color: var(--neon-yellow);
+            font-size: 2.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--neon-pink);
+            transform: scale(1.1);
+        }
+        .email-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--neon-yellow);
+            color: var(--bg-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .email-btn:hover {
+            background-color: var(--neon-pink);
+            color: var(--text-color);
+            box-shadow: 0 0 15px var(--neon-pink);
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 2rem 1.5rem;
+            }
+            h1 {
+                font-size: 3.5em;
+            }
+            .social-links a {
+                font-size: 2rem;
+            }
+            .email-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Anthony Haug</h1>
+        <p>Welcome to my professional portfolio. I specialize in innovative solutions at the intersection of technology and business. Let's connect and explore potential collaborations.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/anthony.haug" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/tonythetiger1981/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="mailto:me@anthonyhaug.com" class="email-btn">Email Me</a>
+    </div>
+</body>
+</html>
