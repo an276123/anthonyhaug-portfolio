@@ -3,125 +3,647 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Haug - Personal Landing Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <meta name="description" content="Anthony Haug helps teams use AI to automate work, sharpen operations, and move faster with practical systems.">
+    <title>Anthony Haug | AI Systems & Automation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #1a1a1a;
-            --container-bg: rgba(26, 26, 26, 0.8);
-            --text-color: #ffffff;
-            --neon-yellow: #ccff00;
-            --neon-pink: #ff1493;
+            --ink: #121417;
+            --muted: #5b626d;
+            --paper: #f7f5ef;
+            --panel: rgba(255, 255, 255, 0.78);
+            --panel-strong: #ffffff;
+            --line: rgba(18, 20, 23, 0.13);
+            --teal: #0f766e;
+            --teal-dark: #0b4f4a;
+            --amber: #d19122;
+            --charcoal: #1b2024;
+            --shadow: 0 24px 70px rgba(18, 20, 23, 0.14);
         }
-        body, html {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100%;
+
+        * {
+            box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: var(--bg-color);
+            margin: 0;
+            min-height: 84vh;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .site-shell {
+            min-height: 100svh;
+            background:
+                linear-gradient(90deg, rgba(247, 245, 239, 0.99) 0%, rgba(247, 245, 239, 0.95) 56%, rgba(247, 245, 239, 0.62) 74%, rgba(247, 245, 239, 0.2) 100%),
+                url("assets/ai-workflow-hero.png") 20% center / auto 136% no-repeat;
             display: flex;
+            flex-direction: column;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 28px 40px 28px clamp(40px, 6vw, 200px);
+        }
+
+        .brand {
+            display: grid;
+            gap: 5px;
+            font-weight: 800;
+            font-size: clamp(2.9rem, 5.5vw, 4.55rem);
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        .brand span {
+            color: var(--teal-dark);
+            font-size: 0.86rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            border-radius: 8px;
+            background: rgba(247, 245, 239, 0.68);
+            color: rgba(18, 20, 23, 0.8);
+            font-size: 0.93rem;
+            font-weight: 700;
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal-dark);
+        }
+
+        .hero {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 34px 40px 64px clamp(40px, 6vw, 200px);
+            flex: 1;
+        }
+
+        .hero-content {
+            max-width: clamp(640px, 42vw, 900px);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 18px;
+            color: var(--teal-dark);
+            font-size: 0.83rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 34px;
+            height: 2px;
+            background: var(--amber);
+        }
+
+        h1 {
+            margin: 0;
+            max-width: clamp(640px, 42vw, 900px);
+            font-size: clamp(2.3rem, 4vw, 3.75rem);
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .intro-line {
+            max-width: clamp(620px, 38vw, 820px);
+            margin: 18px 0 0;
+            color: #293139;
+            font-size: clamp(1rem, 1.25vw, 1.08rem);
+            line-height: 1.5;
+            font-weight: 550;
+        }
+
+        .intro-line strong {
+            color: var(--teal-dark);
+            font-weight: 800;
+        }
+
+        .lead {
+            max-width: clamp(620px, 38vw, 820px);
+            margin: 16px 0 0;
+            color: #343a40;
+            font-size: clamp(1rem, 1.25vw, 1.1rem);
+            line-height: 1.55;
+            font-weight: 500;
+        }
+
+        .credibility-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 760px;
+            margin-top: 18px;
+        }
+
+        .credibility-strip span {
+            padding: 8px 12px;
+            border: 1px solid rgba(18, 20, 23, 0.12);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.58);
+            color: var(--teal-dark);
+            font-size: 0.82rem;
+            font-weight: 800;
+            backdrop-filter: blur(10px);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
+            min-height: 48px;
+            padding: 0 20px;
+            border: 1px solid var(--ink);
+            border-radius: 8px;
+            background: var(--ink);
+            color: #ffffff;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 14px 34px rgba(18, 20, 23, 0.18);
+        }
+
+        .button.secondary {
+            background: rgba(255, 255, 255, 0.74);
+            color: var(--ink);
+            box-shadow: none;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        main {
+            background: var(--paper);
+        }
+
+        .section {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 66px 0;
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+            gap: 42px;
+            align-items: start;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        .section-header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.06rem;
+            line-height: 1.65;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            min-height: 240px;
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: 0 12px 36px rgba(18, 20, 23, 0.06);
+        }
+
+        .card-number {
+            color: var(--amber);
+            font-size: 0.86rem;
+            font-weight: 800;
+        }
+
+        .card h3 {
+            margin: 30px 0 12px;
+            font-size: 1.28rem;
+            line-height: 1.18;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.58;
+        }
+
+        .blog-section[hidden] {
+            display: none;
+        }
+
+        .blog-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .blog-post {
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: 0 12px 36px rgba(18, 20, 23, 0.06);
+        }
+
+        .blog-post time {
+            display: block;
+            color: var(--teal-dark);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .blog-post h3 {
+            margin: 16px 0 10px;
+            font-size: 1.22rem;
+            line-height: 1.2;
+        }
+
+        .blog-post p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.58;
+        }
+
+        .blog-post p + p {
+            margin-top: 12px;
+        }
+
+        .proof-band {
+            background: var(--charcoal);
+            color: #ffffff;
+        }
+
+        .proof-band .section {
+            padding: 62px 0;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .proof-item {
+            min-height: 146px;
+            padding: 22px;
+            background: var(--charcoal);
+        }
+
+        .proof-item strong {
+            display: block;
+            color: #f7d08a;
+            font-size: 1.7rem;
+            line-height: 1;
+        }
+
+        .proof-item span {
+            display: block;
+            margin-top: 13px;
+            color: rgba(255, 255, 255, 0.74);
+            line-height: 1.45;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+            gap: 36px;
             align-items: center;
         }
-        .container {
-            background-color: var(--container-bg);
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            box-shadow: 0 0 20px var(--neon-yellow), 0 0 40px var(--neon-pink);
-            text-align: center;
-            width: 90%;
-            max-width: 700px;
+
+        .contact-panel {
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel-strong);
+            box-shadow: var(--shadow);
         }
-        h1 {
-            color: var(--neon-yellow);
-            font-size: 4.7em;
-            font-weight: 700;
-            margin: 0 0 0.5rem;
-            letter-spacing: 2px;
-            transition: color 0.3s ease;
-            line-height: 1.1;
-        }
-        h1:hover {
-            color: var(--neon-pink);
-        }
-        p {
-            color: var(--text-color);
-            margin-bottom: 2rem;
-            font-size: 1.2em;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-        .social-links {
+
+        .contact-panel a {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .social-links a {
-            color: var(--neon-yellow);
-            font-size: 2.5rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .social-links a:hover {
-            color: var(--neon-pink);
-            transform: scale(1.1);
-        }
-        .email-btn {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--neon-yellow);
-            color: var(--bg-color);
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--ink);
+            font-weight: 800;
             text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-size: 1.1em;
+        }
+
+        .contact-panel a:last-child {
+            border-bottom: 0;
+        }
+
+        .contact-panel span {
+            color: var(--muted);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
-        .email-btn:hover {
-            background-color: var(--neon-pink);
-            color: var(--text-color);
-            box-shadow: 0 0 15px var(--neon-pink);
-            transform: scale(1.05);
+
+        footer {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 28px 0 38px;
+            color: rgba(18, 20, 23, 0.6);
+            font-size: 0.92rem;
         }
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 2rem 1.5rem;
+
+        @media (max-width: 900px) {
+            .site-shell {
+                background:
+                    linear-gradient(180deg, rgba(247, 245, 239, 0.98) 0%, rgba(247, 245, 239, 0.9) 62%, rgba(247, 245, 239, 0.5) 100%),
+                    url("assets/ai-workflow-hero.png") 34% bottom / auto 124% no-repeat;
             }
-            h1 {
-                font-size: 3.5em;
+
+            .hero {
+                padding: 32px 0 36px;
             }
-            .social-links a {
-                font-size: 2rem;
+
+            .section-header,
+            .contact {
+                grid-template-columns: 1fr;
+                gap: 22px;
             }
-            .email-btn {
-                padding: 0.6rem 1.2rem;
-                font-size: 1em;
+
+            .cards,
+            .proof-grid,
+            .blog-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.8em;
+
+        @media (max-width: 620px) {
+            .nav {
+                display: block;
+                align-items: flex-start;
+                gap: 16px;
+                width: min(100% - 28px, 1120px);
+            }
+
+            .brand {
+                font-size: clamp(2rem, 11vw, 2.8rem);
+            }
+
+            .nav-links {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 10px 14px;
+                width: max-content;
+                max-width: 100%;
+                margin-top: 14px;
+            }
+
+            .hero,
+            .section,
+            footer {
+                width: min(100% - 28px, 1120px);
+            }
+
+            .hero {
+                padding: 24px 0 12px;
+            }
+
+            .actions {
+                align-items: stretch;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .cards,
+            .proof-grid,
+            .blog-list {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: auto;
+            }
+
+            .contact-panel {
+                padding: 22px;
+            }
+
+            .contact-panel a {
+                display: block;
+            }
+
+            .contact-panel span {
+                display: block;
+                margin-top: 6px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Anthony Haug</h1>
-        <p>Welcome to my professional portfolio. I specialize in innovative solutions at the intersection of technology and business. Let's connect and explore potential collaborations.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/anthony.haug" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://www.instagram.com/tonythetiger1981/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-        <a href="mailto:me@anthonyhaug.com" class="email-btn">Email Me</a>
-    </div>
+    <header class="site-shell">
+        <nav class="nav" aria-label="Primary navigation">
+                <a class="brand" href="/">Anthony Haug<span>AI systems & automation</span></a>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#blog" data-blog-nav hidden>Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </nav>
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">Practical AI, automation, and execution</p>
+                <h1 id="hero-title">AI systems that move work forward.</h1>
+                <p class="intro-line"><strong>I'm Anthony Haug. I turn AI ideas into production systems that move real work.</strong></p>
+                <p class="lead">20+ years bridging business and technology across insurance and financial services, the last few spent building agentic AI and automation that ships to production, not just demos. If you have a business problem and need someone who can actually understand it and get the technology moving, let's talk.</p>
+                <div class="actions">
+                    <a class="button" href="mailto:me@anthonyhaug.com">Email Anthony</a>
+                    <a class="button secondary" href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+                </div>
+                <div class="credibility-strip" aria-label="What I bring">
+                    <span>Agentic AI, built and shipped</span>
+                    <span>Process &amp; operations redesign</span>
+                    <span>$5M+ in delivered savings</span>
+                    <span>Built a company-wide AI program</span>
+                    <span>Deep insurance &amp; financial services domain</span>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="section" id="work">
+            <div class="section-header">
+                <h2>Built for people who want AI to actually do work.</h2>
+                <p>I bring a practical, operator-minded approach to AI: find the bottleneck, design the workflow, connect the tools, and make the result easy enough for real people to use every day.</p>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="card-number">01</div>
+                    <h3>Agentic AI for underwriting</h3>
+                    <p>Built a production agentic AI tool for a commercial P&amp;C insurance carrier that analyzes risk across large submission batches in parallel, flags anything below a confidence threshold for human review, and feeds structured recommendations back to underwriters. Validated against experienced underwriters before launch.</p>
+                </article>
+                <article class="card">
+                    <div class="card-number">02</div>
+                    <h3>Customer self-service that sticks</h3>
+                    <p>Delivered a two-phase self-service portal as functional product owner, giving commercial insurance customers direct control over policy changes. Cut manual back-office work by roughly a third and reached about 40% adoption in a market where self-service is rare.</p>
+                </article>
+                <article class="card">
+                    <div class="card-number">03</div>
+                    <h3>Operations rebuilt from the ground up</h3>
+                    <p>As a consultant, redesigned a health plan's entire claims operation on a BPM platform, automating adjudication and routing. Cleared the backlog, ended state penalty payments, and drove $5M+ in documented annual savings.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="proof-band" aria-label="What Anthony brings">
+            <div class="section">
+                <div class="proof-grid">
+                    <div class="proof-item">
+                        <strong>AI</strong>
+                        <span>Prompting, agents, workflow automation, and applied experimentation.</span>
+                    </div>
+                    <div class="proof-item">
+                        <strong>Ops</strong>
+                        <span>Systems thinking for teams, tools, processes, and bottlenecks.</span>
+                    </div>
+                    <div class="proof-item">
+                        <strong>Speed</strong>
+                        <span>Prototype quickly, learn fast, and keep the work tied to outcomes.</span>
+                    </div>
+                    <div class="proof-item">
+                        <strong>Clarity</strong>
+                        <span>Less jargon, more useful decisions, cleaner next steps.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section blog-section" id="blog" hidden aria-labelledby="blog-title">
+            <div class="section-header">
+                <h2 id="blog-title">Blog</h2>
+                <p>Notes on systems built, lessons learned, and ideas worth turning into working software.</p>
+            </div>
+            <div class="blog-list" data-blog-list></div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <div>
+                <p class="eyebrow">Hire me or say hello</p>
+                <h2>Have a workflow that needs AI, automation, or a smarter way forward?</h2>
+                <p class="lead">Send me a note with what you are trying to improve. I am especially interested in practical AI projects, automation opportunities, and teams that want to move from curiosity to working systems.</p>
+            </div>
+            <div class="contact-panel" aria-label="Contact links">
+                <a href="mailto:me@anthonyhaug.com">
+                    Email
+                    <span>me@anthonyhaug.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">
+                    LinkedIn
+                    <span>/in/anthonyhaug</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Anthony Haug. AI systems, automation, and practical problem solving.
+    </footer>
+    <script>
+        const ENABLE_BLOG = false;
+
+        const BLOG_POSTS = [
+            {
+                title: "Placeholder post title",
+                date: "YYYY-MM-DD",
+                summary: "Short placeholder summary for a future post about something built, shipped, or planned.",
+                body: "Placeholder body for a future post. Replace this with the story, build notes, lessons learned, and relevant links."
+            },
+            {
+                title: "Another placeholder post",
+                date: "YYYY-MM-DD",
+                summary: "Short placeholder summary for another future post.",
+                body: "Placeholder body for another future post. Keep the post focused on what was built and why it mattered."
+            }
+        ];
+
+        const blogNav = document.querySelector("[data-blog-nav]");
+        const blogSection = document.querySelector("#blog");
+        const blogList = document.querySelector("[data-blog-list]");
+
+        if (ENABLE_BLOG) {
+            blogNav.hidden = false;
+            blogSection.hidden = false;
+            blogList.innerHTML = BLOG_POSTS.map((post) => `
+                <article class="blog-post">
+                    <time datetime="${post.date}">${post.date}</time>
+                    <h3>${post.title}</h3>
+                    <p>${post.summary}</p>
+                    <p>${post.body}</p>
+                </article>
+            `).join("");
+        } else {
+            blogNav.remove();
+            blogSection.remove();
+
+            if (window.location.hash === "#blog") {
+                history.replaceState(null, "", window.location.pathname + window.location.search);
+            }
+        }
+    </script>
 </body>
 </html>
