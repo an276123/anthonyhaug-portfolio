@@ -1,649 +1,494 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anthony Haug helps teams use AI to automate work, sharpen operations, and move faster with practical systems.">
-    <title>Anthony Haug | AI Systems & Automation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --ink: #121417;
-            --muted: #5b626d;
-            --paper: #f7f5ef;
-            --panel: rgba(255, 255, 255, 0.78);
-            --panel-strong: #ffffff;
-            --line: rgba(18, 20, 23, 0.13);
-            --teal: #0f766e;
-            --teal-dark: #0b4f4a;
-            --amber: #d19122;
-            --charcoal: #1b2024;
-            --shadow: 0 24px 70px rgba(18, 20, 23, 0.14);
-        }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Anthony Haug helps teams use AI to automate work, sharpen operations, and move faster with practical systems."/>
+<title>Anthony Haug | AI Systems &amp; Automation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#85145a",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#000000",
+                    "on-tertiary-fixed": "#07006c",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-low": "#f3f4f5",
+                    "on-surface-variant": "#4c4546",
+                    "secondary-fixed": "#ffd8e7",
+                    "outline-variant": "#cfc4c5",
+                    "on-primary-fixed-variant": "#474747",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "surface-dim": "#d9dadb",
+                    "primary": "#000000",
+                    "surface-container": "#edeeef",
+                    "on-secondary-fixed": "#3d0026",
+                    "tertiary-fixed-dim": "#c0c1ff",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#7073ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#76014e",
+                    "surface-container-highest": "#e1e3e4",
+                    "inverse-primary": "#c6c6c6",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-background": "#191c1d",
+                    "tertiary-container": "#07006c",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-surface": "#191c1d",
+                    "secondary": "#a43073",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "background": "#f8f9fa",
+                    "surface-tint": "#5e5e5e",
+                    "primary-fixed": "#e2e2e2",
+                    "surface-bright": "#f8f9fa",
+                    "on-primary-container": "#848484",
+                    "secondary-container": "#fc79bd",
+                    "inverse-surface": "#2e3132",
+                    "tertiary-fixed": "#e1e0ff",
+                    "outline": "#7e7576",
+                    "secondary-fixed-dim": "#ffafd3",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "rail-width": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "scaffold-unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Geist", "system-ui", "sans-serif"],
+                    "display-lg-mobile": ["Geist", "system-ui", "sans-serif"],
+                    "body-base": ["Geist", "system-ui", "sans-serif"],
+                    "label-mono": ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+                    "display-lg": ["Geist", "system-ui", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.4", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-base": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
         body {
-            margin: 0;
-            min-height: 84vh;
-            color: var(--ink);
-            background: var(--paper);
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-family: 'Geist', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
         }
 
-        a {
-            color: inherit;
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
 
-        .site-shell {
-            min-height: 100svh;
-            background:
-                linear-gradient(90deg, rgba(247, 245, 239, 0.99) 0%, rgba(247, 245, 239, 0.95) 56%, rgba(247, 245, 239, 0.62) 74%, rgba(247, 245, 239, 0.2) 100%),
-                url("assets/ai-workflow-hero.png") 20% center / auto 136% no-repeat;
-            display: flex;
-            flex-direction: column;
+        /* Glassmorphism effects */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(24px);
+            border: 0.5px solid rgba(0, 0, 0, 0.1);
         }
 
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        /* Orb Animations */
+        .orb {
+            border-radius: 100%;
+            pointer-events: none;
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* Scaffolding Lines */
+        .scaffold-line-h {
+            height: 0.5px;
+            background: rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 28px 40px 28px clamp(40px, 6vw, 200px);
         }
 
-        .brand {
-            display: grid;
-            gap: 5px;
-            font-weight: 800;
-            font-size: clamp(2.9rem, 5.5vw, 4.55rem);
-            line-height: 1;
-            text-decoration: none;
+        /* Custom Hover for Buttons */
+        .glass-primary {
+            background: rgba(255, 255, 255, 0.2);
+            border: 0.5px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .brand span {
-            color: var(--teal-dark);
-            font-size: 0.86rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+        .glass-primary:hover {
+            background: rgba(79, 70, 229, 0.06);
+            border: 0.5px solid rgba(79, 70, 229, 0.55);
+            color: #4f46e5;
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            padding: 10px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.38);
-            border-radius: 8px;
-            background: rgba(247, 245, 239, 0.68);
-            color: rgba(18, 20, 23, 0.8);
-            font-size: 0.93rem;
-            font-weight: 700;
-            backdrop-filter: blur(14px);
+        /* Pop-color glow on primary CTA hover */
+        .btn-glow {
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
         }
 
-        .nav-links a {
-            text-decoration: none;
+        .btn-glow:hover {
+            box-shadow: 0 10px 32px rgba(252, 121, 189, 0.35), 0 6px 22px rgba(112, 115, 255, 0.30);
         }
 
-        .nav-links a:hover {
-            color: var(--teal-dark);
-        }
-
-        .hero {
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 34px 40px 64px clamp(40px, 6vw, 200px);
-            flex: 1;
-        }
-
-        .hero-content {
-            max-width: clamp(640px, 42vw, 900px);
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin: 0 0 18px;
-            color: var(--teal-dark);
-            font-size: 0.83rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 34px;
-            height: 2px;
-            background: var(--amber);
-        }
-
-        h1 {
-            margin: 0;
-            max-width: clamp(640px, 42vw, 900px);
-            font-size: clamp(2.3rem, 4vw, 3.75rem);
-            line-height: 1.08;
-            letter-spacing: 0;
-        }
-
-        .intro-line {
-            max-width: clamp(620px, 38vw, 820px);
-            margin: 18px 0 0;
-            color: #293139;
-            font-size: clamp(1rem, 1.25vw, 1.08rem);
-            line-height: 1.5;
-            font-weight: 550;
-        }
-
-        .intro-line strong {
-            color: var(--teal-dark);
-            font-weight: 800;
-        }
-
-        .lead {
-            max-width: clamp(620px, 38vw, 820px);
-            margin: 16px 0 0;
-            color: #343a40;
-            font-size: clamp(1rem, 1.25vw, 1.1rem);
-            line-height: 1.55;
-            font-weight: 500;
-        }
-
-        .credibility-strip {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            max-width: 760px;
-            margin-top: 18px;
-        }
-
-        .credibility-strip span {
-            padding: 8px 12px;
-            border: 1px solid rgba(18, 20, 23, 0.12);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.58);
-            color: var(--teal-dark);
-            font-size: 0.82rem;
-            font-weight: 800;
-            backdrop-filter: blur(10px);
-        }
-
-        .actions {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 14px;
-            margin-top: 22px;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0 20px;
-            border: 1px solid var(--ink);
-            border-radius: 8px;
-            background: var(--ink);
-            color: #ffffff;
-            font-weight: 800;
-            text-decoration: none;
-            box-shadow: 0 14px 34px rgba(18, 20, 23, 0.18);
-        }
-
-        .button.secondary {
-            background: rgba(255, 255, 255, 0.74);
-            color: var(--ink);
-            box-shadow: none;
-        }
-
-        .button:hover {
-            transform: translateY(-1px);
-        }
-
-        main {
-            background: var(--paper);
-        }
-
-        .section {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 66px 0;
-        }
-
-        .section-header {
-            display: grid;
-            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-            gap: 42px;
-            align-items: start;
-            margin-bottom: 28px;
-        }
-
-        h2 {
-            margin: 0;
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1;
-            letter-spacing: 0;
-        }
-
-        .section-header p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 1.06rem;
-            line-height: 1.65;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .card {
-            min-height: 240px;
-            padding: 24px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: var(--panel);
-            box-shadow: 0 12px 36px rgba(18, 20, 23, 0.06);
-        }
-
-        .card-number {
-            color: var(--amber);
-            font-size: 0.86rem;
-            font-weight: 800;
-        }
-
-        .card h3 {
-            margin: 30px 0 12px;
-            font-size: 1.28rem;
-            line-height: 1.18;
-        }
-
-        .card p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.58;
-        }
-
-        .blog-section[hidden] {
-            display: none;
-        }
-
-        .blog-list {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .blog-post {
-            padding: 24px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: var(--panel);
-            box-shadow: 0 12px 36px rgba(18, 20, 23, 0.06);
-        }
-
-        .blog-post time {
-            display: block;
-            color: var(--teal-dark);
-            font-size: 0.82rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .blog-post h3 {
-            margin: 16px 0 10px;
-            font-size: 1.22rem;
-            line-height: 1.2;
-        }
-
-        .blog-post p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.58;
-        }
-
-        .blog-post p + p {
-            margin-top: 12px;
-        }
-
-        .proof-band {
-            background: var(--charcoal);
-            color: #ffffff;
-        }
-
-        .proof-band .section {
-            padding: 62px 0;
-        }
-
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1px;
-            background: rgba(255, 255, 255, 0.18);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        .proof-item {
-            min-height: 146px;
-            padding: 22px;
-            background: var(--charcoal);
-        }
-
-        .proof-item strong {
-            display: block;
-            color: #f7d08a;
-            font-size: 1.7rem;
-            line-height: 1;
-        }
-
-        .proof-item span {
-            display: block;
-            margin-top: 13px;
-            color: rgba(255, 255, 255, 0.74);
-            line-height: 1.45;
-        }
-
-        .contact {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-            gap: 36px;
-            align-items: center;
-        }
-
-        .contact-panel {
-            padding: 28px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: var(--panel-strong);
-            box-shadow: var(--shadow);
-        }
-
-        .contact-panel a {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 16px 0;
-            border-bottom: 1px solid var(--line);
-            color: var(--ink);
-            font-weight: 800;
-            text-decoration: none;
-        }
-
-        .contact-panel a:last-child {
-            border-bottom: 0;
-        }
-
-        .contact-panel span {
-            color: var(--muted);
-            font-weight: 700;
-        }
-
-        footer {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 28px 0 38px;
-            color: rgba(18, 20, 23, 0.6);
-            font-size: 0.92rem;
-        }
-
-        @media (max-width: 900px) {
-            .site-shell {
-                background:
-                    linear-gradient(180deg, rgba(247, 245, 239, 0.98) 0%, rgba(247, 245, 239, 0.9) 62%, rgba(247, 245, 239, 0.5) 100%),
-                    url("assets/ai-workflow-hero.png") 34% bottom / auto 124% no-repeat;
-            }
-
-            .hero {
-                padding: 32px 0 36px;
-            }
-
-            .section-header,
-            .contact {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
-
-            .cards,
-            .proof-grid,
-            .blog-list {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 620px) {
-            .nav {
-                display: block;
-                align-items: flex-start;
-                gap: 16px;
-                width: min(100% - 28px, 1120px);
-            }
-
-            .brand {
-                font-size: clamp(2rem, 11vw, 2.8rem);
-            }
-
-            .nav-links {
-                justify-content: flex-start;
-                flex-wrap: wrap;
-                gap: 10px 14px;
-                width: max-content;
-                max-width: 100%;
-                margin-top: 14px;
-            }
-
-            .hero,
-            .section,
-            footer {
-                width: min(100% - 28px, 1120px);
-            }
-
-            .hero {
-                padding: 24px 0 12px;
-            }
-
-            .actions {
-                align-items: stretch;
-            }
-
-            .button {
-                width: 100%;
-            }
-
-            .cards,
-            .proof-grid,
-            .blog-list {
-                grid-template-columns: 1fr;
-            }
-
-            .card {
-                min-height: auto;
-            }
-
-            .contact-panel {
-                padding: 22px;
-            }
-
-            .contact-panel a {
-                display: block;
-            }
-
-            .contact-panel span {
-                display: block;
-                margin-top: 6px;
-            }
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .orb { transition: none !important; transform: none !important; }
+            html { scroll-behavior: auto !important; }
         }
     </style>
 </head>
-<body>
-    <header class="site-shell">
-        <nav class="nav" aria-label="Primary navigation">
-                <a class="brand" href="/">Anthony Haug<span>AI systems & automation</span></a>
-            <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#blog" data-blog-nav hidden>Blog</a>
-                <a href="#contact">Contact</a>
-                <a href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-        </nav>
-
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-content">
-                <p class="eyebrow">Practical AI, automation, and execution</p>
-                <h1 id="hero-title">AI systems that move work forward.</h1>
-                <p class="intro-line"><strong>I'm Anthony Haug. I turn AI ideas into production systems that move real work.</strong></p>
-                <p class="lead">20+ years bridging business and technology across insurance and financial services, the last few spent building agentic AI and automation that ships to production, not just demos. If you have a business problem and need someone who can actually understand it and get the technology moving, let's talk.</p>
-                <div class="actions">
-                    <a class="button" href="mailto:me@anthonyhaug.com">Email Anthony</a>
-                    <a class="button secondary" href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">Connect on LinkedIn</a>
-                </div>
-                <div class="credibility-strip" aria-label="What I bring">
-                    <span>Agentic AI, built and shipped</span>
-                    <span>Process &amp; operations redesign</span>
-                    <span>$5M+ in delivered savings</span>
-                    <span>Built a company-wide AI program</span>
-                    <span>Deep insurance &amp; financial services domain</span>
-                </div>
-            </div>
-        </section>
-    </header>
-
-    <main>
-        <section class="section" id="work">
-            <div class="section-header">
-                <h2>Built for people who want AI to actually do work.</h2>
-                <p>I bring a practical, operator-minded approach to AI: find the bottleneck, design the workflow, connect the tools, and make the result easy enough for real people to use every day.</p>
-            </div>
-
-            <div class="cards">
-                <article class="card">
-                    <div class="card-number">01</div>
-                    <h3>Agentic AI for underwriting</h3>
-                    <p>Built a production agentic AI tool for a commercial P&amp;C insurance carrier that analyzes risk across large submission batches in parallel, flags anything below a confidence threshold for human review, and feeds structured recommendations back to underwriters. Validated against experienced underwriters before launch.</p>
-                </article>
-                <article class="card">
-                    <div class="card-number">02</div>
-                    <h3>Customer self-service that sticks</h3>
-                    <p>Delivered a two-phase self-service portal as functional product owner, giving commercial insurance customers direct control over policy changes. Cut manual back-office work by roughly a third and reached about 40% adoption in a market where self-service is rare.</p>
-                </article>
-                <article class="card">
-                    <div class="card-number">03</div>
-                    <h3>Operations rebuilt from the ground up</h3>
-                    <p>As a consultant, redesigned a health plan's entire claims operation on a BPM platform, automating adjudication and routing. Cleared the backlog, ended state penalty payments, and drove $5M+ in documented annual savings.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="proof-band" aria-label="What Anthony brings">
-            <div class="section">
-                <div class="proof-grid">
-                    <div class="proof-item">
-                        <strong>AI</strong>
-                        <span>Prompting, agents, workflow automation, and applied experimentation.</span>
-                    </div>
-                    <div class="proof-item">
-                        <strong>Ops</strong>
-                        <span>Systems thinking for teams, tools, processes, and bottlenecks.</span>
-                    </div>
-                    <div class="proof-item">
-                        <strong>Speed</strong>
-                        <span>Prototype quickly, learn fast, and keep the work tied to outcomes.</span>
-                    </div>
-                    <div class="proof-item">
-                        <strong>Clarity</strong>
-                        <span>Less jargon, more useful decisions, cleaner next steps.</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section blog-section" id="blog" hidden aria-labelledby="blog-title">
-            <div class="section-header">
-                <h2 id="blog-title">Blog</h2>
-                <p>Notes on systems built, lessons learned, and ideas worth turning into working software.</p>
-            </div>
-            <div class="blog-list" data-blog-list></div>
-        </section>
-
-        <section class="section contact" id="contact">
-            <div>
-                <p class="eyebrow">Hire me or say hello</p>
-                <h2>Have a workflow that needs AI, automation, or a smarter way forward?</h2>
-                <p class="lead">Send me a note with what you are trying to improve. I am especially interested in practical AI projects, automation opportunities, and teams that want to move from curiosity to working systems.</p>
-            </div>
-            <div class="contact-panel" aria-label="Contact links">
-                <a href="mailto:me@anthonyhaug.com">
-                    Email
-                    <span>me@anthonyhaug.com</span>
-                </a>
-                <a href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">
-                    LinkedIn
-                    <span>/in/anthonyhaug</span>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        &copy; 2026 Anthony Haug. AI systems, automation, and practical problem solving.
-    </footer>
-    <script>
-        const ENABLE_BLOG = false;
-
-        const BLOG_POSTS = [
-            {
-                title: "Placeholder post title",
-                date: "YYYY-MM-DD",
-                summary: "Short placeholder summary for a future post about something built, shipped, or planned.",
-                body: "Placeholder body for a future post. Replace this with the story, build notes, lessons learned, and relevant links."
-            },
-            {
-                title: "Another placeholder post",
-                date: "YYYY-MM-DD",
-                summary: "Short placeholder summary for another future post.",
-                body: "Placeholder body for another future post. Keep the post focused on what was built and why it mattered."
-            }
-        ];
-
-        const blogNav = document.querySelector("[data-blog-nav]");
-        const blogSection = document.querySelector("#blog");
-        const blogList = document.querySelector("[data-blog-list]");
-
-        if (ENABLE_BLOG) {
-            blogNav.hidden = false;
-            blogSection.hidden = false;
-            blogList.innerHTML = BLOG_POSTS.map((post) => `
-                <article class="blog-post">
-                    <time datetime="${post.date}">${post.date}</time>
-                    <h3>${post.title}</h3>
-                    <p>${post.summary}</p>
-                    <p>${post.body}</p>
-                </article>
-            `).join("");
-        } else {
-            blogNav.remove();
-            blogSection.remove();
-
-            if (window.location.hash === "#blog") {
-                history.replaceState(null, "", window.location.pathname + window.location.search);
-            }
+<body class="bg-surface text-on-surface bg-white relative">
+<!-- Fixed Background Base Orbs -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+<div class="orb absolute top-[-10%] left-[10%] w-[70vw] h-[70vw] bg-[radial-gradient(circle,_rgba(252,121,189,0.1)_0%,_transparent_70%)] blur-[140px]"></div>
+<div class="orb absolute top-[5%] right-[-5%] w-[60vw] h-[60vw] bg-[radial-gradient(circle,_rgba(112,115,255,0.08)_0%,_transparent_70%)] blur-[140px]"></div>
+<div class="orb absolute bottom-[10%] left-[-10%] w-[50vw] h-[50vw] bg-[radial-gradient(circle,_rgba(192,193,255,0.1)_0%,_transparent_70%)] blur-[140px]"></div>
+</div>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-rail-width bg-surface-container-lowest/40 backdrop-blur-xl border-b border-on-surface/10">
+<div class="flex items-baseline gap-4">
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">Anthony Haug</span>
+<span class="hidden md:block font-label-mono text-label-mono text-on-surface-variant/60 uppercase tracking-widest">AI Systems &amp; Automation</span>
+</div>
+<nav class="flex gap-5 md:gap-8 items-center">
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors duration-300" href="#work">Work</a>
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors duration-300" href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">LinkedIn</a>
+</nav>
+</header>
+<main class="pt-32 pb-24 relative z-10">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-24 max-w-6xl relative z-10">
+<!-- Hero Orbs -->
+<div class="absolute -top-40 -left-20 w-[800px] h-[800px] bg-[radial-gradient(circle,_#fc79bd_0%,_transparent_70%)] opacity-25 blur-[120px] -z-10 orb"></div>
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_#7073ff_0%,_transparent_70%)] opacity-20 blur-[100px] -z-10 orb"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-10 md:col-start-2">
+<p class="font-body-base text-sm font-bold text-[#4f46e5] uppercase tracking-[0.12em] mb-6">Practical AI · Automation · Operations</p>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">
+                        I build AI systems that make <br class="hidden md:block"/>complex work feel clearer.
+                    </h1>
+<div class="max-w-3xl mb-12">
+<p class="font-headline-md text-headline-md text-on-surface mb-6">
+                            I'm Anthony Haug. I turn AI ideas into production systems that move real work.
+                        </p>
+<p class="font-body-base text-body-base text-on-surface mb-8 opacity-80 leading-relaxed">
+                            20+ years bridging business and technology across insurance and financial services, the last few spent building agentic AI and automation that ships to production, not just demos. If you have a business problem and need someone who can actually understand it and get the technology moving, let's talk.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-[999px] font-body-base font-semibold flex items-center gap-2 hover:translate-y-[-2px] btn-glow" href="mailto:me@anthonyhaug.com">
+                                Email Anthony
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="glass-primary px-8 py-4 rounded-[999px] font-body-base font-semibold flex items-center gap-2" href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">
+                                Connect on LinkedIn
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scaffolding Line -->
+<div class="scaffold-line-h"></div>
+<!-- Philosophy Section -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest/20 relative overflow-hidden z-10">
+<!-- Philosophy Orbs -->
+<div class="absolute top-0 right-0 w-[1200px] h-[1200px] bg-[radial-gradient(circle,_#fc79bd_0%,_transparent_60%)] opacity-25 blur-[160px] -z-10 orb translate-x-1/4 -translate-y-1/4"></div>
+<div class="absolute bottom-0 left-0 w-[1000px] h-[1000px] bg-[radial-gradient(circle,_#7073ff_0%,_transparent_60%)] opacity-20 blur-[140px] -z-10 orb -translate-x-1/4 translate-y-1/4"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<span class="font-label-mono text-sm font-medium tracking-[0.2em] text-white bg-secondary px-4 py-2 mb-6 inline-block">PHILOSOPHY</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8">Built for people who want AI to <span class="italic text-secondary">actually do work</span>.</h2>
+<p class="font-headline-md text-headline-md text-on-surface-variant leading-relaxed">
+                    I bring a practical, operator-minded approach to AI: find the bottleneck, design the workflow, connect the tools, and make the result easy enough for real people to use every day.
+                </p>
+</div>
+</section>
+<!-- Selected Work (Glassy Modules) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative z-10" id="work">
+<!-- Case Studies Orbs -->
+<div class="absolute top-20 -left-40 w-[1000px] h-[1000px] bg-[radial-gradient(circle,_#7073ff_0%,_transparent_60%)] opacity-20 blur-[150px] -z-10 orb"></div>
+<div class="absolute bottom-20 -right-20 w-[900px] h-[900px] bg-[radial-gradient(circle,_#fc79bd_0%,_transparent_60%)] opacity-20 blur-[130px] -z-10 orb"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-[radial-gradient(circle,_#c0c1ff_0%,_transparent_60%)] opacity-15 blur-[160px] -z-10 orb"></div>
+<div class="flex justify-between items-end mb-16 relative z-10">
+<div>
+<h3 class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-[0.3em] mb-4">Case Studies</h3>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg">Production Implementations</h2>
+</div>
+<div class="hidden md:block scaffold-line-h max-w-xs mb-4 ml-12"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
+<!-- Case 01 -->
+<div class="md:col-span-8 group">
+<div class="glass-card p-10 h-full flex flex-col justify-between hover:border-[#4f46e5]/60 transition-all duration-500 overflow-hidden relative">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="font-display-lg text-[120px] leading-none">01</span>
+</div>
+<div class="relative z-10">
+<span class="font-label-mono text-label-mono text-on-surface-variant mb-6 block">AGENTIC AI ARCHITECTURE</span>
+<h4 class="font-headline-md text-headline-md mb-6">Agentic AI for underwriting</h4>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-xl mb-8">
+                                Built a production agentic AI tool for a commercial P&amp;C insurance carrier that analyzes risk across large submission batches in parallel, flags anything below a confidence threshold for human review, and feeds structured recommendations back to underwriters. Validated against experienced underwriters before launch.
+                            </p>
+</div>
+<div class="relative z-10 mt-auto grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-on-surface/10">
+<div>
+<p class="font-display-lg text-3xl font-semibold tracking-tight text-primary">80%</p>
+<p class="font-label-mono text-label-mono text-on-surface-variant mt-2 leading-4 uppercase">Accuracy at or above underwriter baseline</p>
+</div>
+<div>
+<p class="font-display-lg text-3xl font-semibold tracking-tight text-[#4f46e5]">90%+</p>
+<p class="font-label-mono text-label-mono text-on-surface-variant mt-2 leading-4 uppercase">Confidence gate — below it, a human reviews</p>
+</div>
+<div>
+<p class="font-display-lg text-3xl font-semibold tracking-tight text-secondary">100+</p>
+<p class="font-label-mono text-label-mono text-on-surface-variant mt-2 leading-4 uppercase">Submissions analyzed in parallel batches</p>
+</div>
+</div>
+<!-- Blurred visual representation placeholder -->
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary-container/20 blur-3xl rounded-full"></div>
+</div>
+</div>
+<!-- Case 02 -->
+<div class="md:col-span-4">
+<div class="glass-card p-10 h-full flex flex-col group hover:border-[#4f46e5]/60 transition-all duration-500 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="font-display-lg text-[120px] leading-none">02</span>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant mb-6 block">PRODUCT DELIVERY</span>
+<h4 class="font-headline-md text-headline-md mb-6">Customer self-service that sticks</h4>
+<p class="font-body-base text-body-base text-on-surface-variant mb-8">
+                            Delivered a two-phase self-service portal as functional product owner, giving commercial insurance customers direct control over policy changes. Phase two automated the data flow from portal request into the CRM and policy admin system, with an underwriter review step.
+                        </p>
+<div class="mt-auto pt-6 border-t border-on-surface/10 flex items-center gap-5 relative z-10">
+<svg class="w-20 h-20 shrink-0" viewBox="0 0 42 42" role="img" aria-label="Donut chart showing 40 percent customer adoption">
+<circle cx="21" cy="21" r="15.915" fill="none" stroke="#e1e3e4" stroke-width="4"></circle>
+<circle cx="21" cy="21" r="15.915" fill="none" stroke="#a43073" stroke-width="4" stroke-dasharray="40 60" stroke-dashoffset="25" stroke-linecap="round"></circle>
+<text x="21" y="24" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#191c1d">40%</text>
+</svg>
+<div>
+<p class="font-label-mono text-label-mono text-on-surface-variant uppercase leading-4">Customer adoption</p>
+<p class="mt-3"><span class="font-headline-md text-xl font-semibold text-[#4f46e5]">−33%</span> <span class="font-label-mono text-label-mono text-on-surface-variant uppercase">back-office workload</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 03 -->
+<div class="md:col-span-12">
+<div class="glass-card p-12 group hover:border-[#4f46e5]/60 transition-all duration-500 flex flex-col md:flex-row gap-12 items-center relative overflow-hidden">
+<div class="md:w-1/2 relative z-10">
+<span class="font-label-mono text-label-mono text-on-surface-variant mb-6 block">OPERATIONS REDESIGN</span>
+<h4 class="font-headline-md text-2xl md:text-3xl font-semibold tracking-tight mb-6 leading-snug">Operations rebuilt from the ground up</h4>
+<p class="font-body-base text-body-base text-on-surface-variant leading-relaxed mb-8">
+                                As a consultant, redesigned a health plan's entire claims operation on a BPM platform, automating adjudication and routing. Cleared the backlog, ended state penalty payments, and drove $5M+ in documented annual savings.
+                            </p>
+</div>
+<div class="md:w-1/2 h-64 glass-card border-none bg-surface-container relative flex items-center justify-center overflow-hidden p-4">
+<div class="absolute inset-0 opacity-40">
+<div class="absolute top-[-20%] left-[10%] w-[60%] h-[60%] bg-[radial-gradient(circle,_#fc79bd_0%,_transparent_70%)] blur-[60px]"></div>
+<div class="absolute bottom-[-20%] right-[5%] w-[70%] h-[70%] bg-[radial-gradient(circle,_#7073ff_0%,_transparent_70%)] blur-[70px]"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+<span class="font-display-lg text-[160px] leading-none font-semibold">03</span>
+</div>
+<svg class="relative z-10 w-full h-full" viewBox="0 0 660 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BPMN diagram of an automated claims adjudication workflow: intake, exclusive gateway, auto-adjudication or analyst review, payment, end">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#4c4546"></path>
+</marker>
+<marker id="arrowIndigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#7073ff"></path>
+</marker>
+<marker id="arrowPink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#a43073"></path>
+</marker>
+</defs>
+<!-- Start event -->
+<circle cx="40" cy="140" r="13" fill="rgba(255,255,255,0.7)" stroke="#4c4546" stroke-width="1.5"></circle>
+<text x="40" y="172" font-family="JetBrains Mono, monospace" font-size="9" fill="#4c4546" text-anchor="middle" letter-spacing="1">FNOL</text>
+<!-- Start -> Intake -->
+<line x1="53" y1="140" x2="82" y2="140" stroke="#4c4546" stroke-width="1.5" marker-end="url(#arrow)"></line>
+<!-- Task: Claim Intake -->
+<rect x="84" y="115" width="104" height="50" rx="8" fill="rgba(255,255,255,0.7)" stroke="#4c4546" stroke-width="1.5"></rect>
+<text x="136" y="145" font-family="JetBrains Mono, monospace" font-size="11" fill="#191c1d" text-anchor="middle">Claim Intake</text>
+<!-- Intake -> Gateway -->
+<line x1="188" y1="140" x2="216" y2="140" stroke="#4c4546" stroke-width="1.5" marker-end="url(#arrow)"></line>
+<!-- Exclusive gateway -->
+<path d="M 247 112 L 275 140 L 247 168 L 219 140 Z" fill="rgba(255,255,255,0.8)" stroke="#a43073" stroke-width="1.5"></path>
+<path d="M 239 132 L 255 148 M 255 132 L 239 148" stroke="#a43073" stroke-width="2" stroke-linecap="round"></path>
+<text x="247" y="192" font-family="JetBrains Mono, monospace" font-size="9" fill="#4c4546" text-anchor="middle" letter-spacing="1">CONFIDENCE?</text>
+<!-- Yes branch (up) -->
+<path d="M 247 112 L 247 62 L 308 62" fill="none" stroke="#7073ff" stroke-width="1.5" marker-end="url(#arrowIndigo)"></path>
+<text x="260" y="90" font-family="JetBrains Mono, monospace" font-size="9" fill="#7073ff" letter-spacing="1">90%+</text>
+<!-- Task: Auto-Adjudicate -->
+<rect x="310" y="37" width="140" height="50" rx="8" fill="rgba(255,255,255,0.7)" stroke="#7073ff" stroke-width="1.5"></rect>
+<text x="380" y="60" font-family="JetBrains Mono, monospace" font-size="11" fill="#191c1d" text-anchor="middle">Auto-Adjudicate</text>
+<text x="380" y="75" font-family="JetBrains Mono, monospace" font-size="8" fill="#4c4546" text-anchor="middle" letter-spacing="1">STRAIGHT-THROUGH</text>
+<!-- No branch (down) -->
+<path d="M 247 168 L 247 220 L 308 220" fill="none" stroke="#a43073" stroke-width="1.5" marker-end="url(#arrowPink)"></path>
+<text x="260" y="205" font-family="JetBrains Mono, monospace" font-size="9" fill="#a43073" letter-spacing="1">BELOW</text>
+<!-- Task: Analyst Review -->
+<rect x="310" y="195" width="140" height="50" rx="8" fill="rgba(255,255,255,0.7)" stroke="#a43073" stroke-width="1.5"></rect>
+<text x="380" y="218" font-family="JetBrains Mono, monospace" font-size="11" fill="#191c1d" text-anchor="middle">Analyst Review</text>
+<text x="380" y="233" font-family="JetBrains Mono, monospace" font-size="8" fill="#4c4546" text-anchor="middle" letter-spacing="1">HUMAN-IN-THE-LOOP</text>
+<!-- Merge to Payment -->
+<path d="M 450 62 L 520 62 L 520 112" fill="none" stroke="#4c4546" stroke-width="1.5" marker-end="url(#arrow)"></path>
+<path d="M 450 220 L 520 220 L 520 168" fill="none" stroke="#4c4546" stroke-width="1.5" marker-end="url(#arrow)"></path>
+<!-- Task: Payment -->
+<rect x="474" y="115" width="92" height="50" rx="8" fill="rgba(255,255,255,0.7)" stroke="#4c4546" stroke-width="1.5"></rect>
+<text x="520" y="145" font-family="JetBrains Mono, monospace" font-size="11" fill="#191c1d" text-anchor="middle">Payment</text>
+<!-- Payment -> End -->
+<line x1="566" y1="140" x2="600" y2="140" stroke="#4c4546" stroke-width="1.5" marker-end="url(#arrow)"></line>
+<!-- End event -->
+<circle cx="618" cy="140" r="13" fill="rgba(255,255,255,0.7)" stroke="#191c1d" stroke-width="3.5"></circle>
+<text x="618" y="172" font-family="JetBrains Mono, monospace" font-size="9" fill="#4c4546" text-anchor="middle" letter-spacing="1">CLOSED</text>
+<!-- Caption -->
+<text x="10" y="16" font-family="JetBrains Mono, monospace" font-size="9" fill="#7e7576" letter-spacing="2">CLAIMS ADJUDICATION · BPMN</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- Case 04 -->
+<div class="md:col-span-4">
+<div class="glass-card p-10 h-full flex flex-col group hover:border-[#4f46e5]/60 transition-all duration-500 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="font-display-lg text-[120px] leading-none">04</span>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant mb-6 block">AI ENABLEMENT</span>
+<h4 class="font-headline-md text-headline-md mb-6">AI adoption across an entire company</h4>
+<p class="font-body-base text-body-base text-on-surface-variant mb-8">
+                            Built and ran a company-wide AI Champion program for an insurance carrier: governance framework, prompt engineering standards, and hands-on training from group workshops to 1:1 coaching across every business unit.
+                        </p>
+</div>
+</div>
+<!-- Case 05 -->
+<div class="md:col-span-4">
+<div class="glass-card p-10 h-full flex flex-col group hover:border-[#4f46e5]/60 transition-all duration-500 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="font-display-lg text-[120px] leading-none">05</span>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant mb-6 block">RETRIEVAL-AUGMENTED AI</span>
+<h4 class="font-headline-md text-headline-md mb-6">Answers from the documents you already have</h4>
+<p class="font-body-base text-body-base text-on-surface-variant mb-8">
+                            Delivered RAG-based chatbot workflows that surface internal documentation in response to plain-language questions from underwriting staff — institutional knowledge on demand instead of buried in shared drives.
+                        </p>
+</div>
+</div>
+<!-- Case 06 -->
+<div class="md:col-span-4">
+<div class="glass-card p-10 h-full flex flex-col group hover:border-[#4f46e5]/60 transition-all duration-500 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="font-display-lg text-[120px] leading-none">06</span>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant mb-6 block">WORKFLOW AUTOMATION</span>
+<h4 class="font-headline-md text-headline-md mb-6">70+ automations, no dev team required</h4>
+<p class="font-body-base text-body-base text-on-surface-variant mb-8">
+                            For a global retail brand, built and managed 70+ workflow automations routing data across forms, CRMs, and internal systems at 13 retail locations — cutting daily reporting from hours to minutes.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills/Approach Grid -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-black text-white relative overflow-hidden">
+<!-- Darker Orb -->
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-on-tertiary-container/40 blur-[150px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary-container/30 blur-[140px] rounded-full translate-y-1/2 -translate-x-1/4"></div>
+<div class="max-w-6xl mx-auto relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<span class="material-symbols-outlined text-secondary-container mb-6 text-4xl">psychology</span>
+<h5 class="font-headline-md text-headline-md mb-4">AI Focus</h5>
+<p class="font-body-base text-body-base opacity-60">Prompting, agents, workflow automation, and applied experimentation.</p>
+</div>
+<div>
+<span class="material-symbols-outlined text-secondary-container mb-6 text-4xl">account_tree</span>
+<h5 class="font-headline-md text-headline-md mb-4">Ops Design</h5>
+<p class="font-body-base text-body-base opacity-60">Systems thinking for teams, tools, processes, and bottlenecks.</p>
+</div>
+<div>
+<span class="material-symbols-outlined text-secondary-container mb-6 text-4xl">bolt</span>
+<h5 class="font-headline-md text-headline-md mb-4">Speed</h5>
+<p class="font-body-base text-body-base opacity-60">Prototype quickly, learn fast, and keep the work tied to outcomes.</p>
+</div>
+<div>
+<span class="material-symbols-outlined text-secondary-container mb-6 text-4xl">visibility</span>
+<h5 class="font-headline-md text-headline-md mb-4">Clarity</h5>
+<p class="font-body-base text-body-base opacity-60">Less jargon, more useful decisions, cleaner next steps.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact/Sign-off Block -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop border-t border-on-surface/10 relative overflow-hidden z-10" id="contact">
+<!-- Contact Orbs -->
+<div class="absolute top-10 left-10 w-[700px] h-[700px] bg-[radial-gradient(circle,_#ffd8e7_0%,_transparent_60%)] opacity-30 blur-[120px] -z-10 orb"></div>
+<div class="absolute bottom-0 right-0 w-[900px] h-[900px] bg-[radial-gradient(circle,_#c0c1ff_0%,_transparent_60%)] opacity-25 blur-[140px] -z-10 orb translate-x-1/4 translate-y-1/4"></div>
+<div class="max-w-4xl relative z-10 md:ml-[8.333%]">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-[0.3em] mb-6 block">Hire me or say hello</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8">Have a workflow that needs AI, automation, or a smarter way forward?</h2>
+<p class="font-headline-md text-headline-md text-on-surface-variant mb-12 max-w-2xl">
+                    Send me a note with what you are trying to improve. I am especially interested in practical AI projects, automation opportunities, and teams that want to move from curiosity to working systems.
+                </p>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4 group flex-wrap">
+<span class="font-label-mono text-label-mono text-on-surface-variant/40">EMAIL</span>
+<a class="font-headline-md text-headline-md border-b border-transparent group-hover:border-[#4f46e5]/60 transition-all" href="mailto:me@anthonyhaug.com">me@anthonyhaug.com</a>
+</div>
+<div class="flex items-center gap-4 group flex-wrap">
+<span class="font-label-mono text-label-mono text-on-surface-variant/40">LINKEDIN</span>
+<a class="font-headline-md text-headline-md border-b border-transparent group-hover:border-[#4f46e5]/60 transition-all" href="https://www.linkedin.com/in/anthonyhaug/" target="_blank" rel="noopener">/in/anthonyhaug</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center border-t border-on-surface/10 bg-transparent mb-12 relative z-10 gap-4">
+<span class="font-label-mono text-label-mono text-primary">© 2026 ANTHONY HAUG.</span>
+<p class="font-label-mono text-label-mono text-on-surface-variant">AI systems, automation, and practical problem solving.</p>
+</footer>
+<script>
+        // Simple parallax for background orbs (desktop + fine pointer only)
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const finePointer = window.matchMedia('(pointer: fine)').matches;
+        if (!prefersReducedMotion && finePointer) {
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 2;
+                const y = (e.clientY / window.innerHeight - 0.5) * 2;
+                document.querySelectorAll('.orb').forEach((orb, index) => {
+                    const speed = (index % 3 + 1) * 15;
+                    orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                });
+            });
         }
+
+        // Smooth scroll for real anchor links only (skips bare "#")
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.length <= 1) return; // bare "#" — do nothing
+                const target = document.querySelector(targetId);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
     </script>
-</body>
-</html>
+</body></html>
